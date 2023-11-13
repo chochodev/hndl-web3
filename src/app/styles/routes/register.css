@@ -1,0 +1,317 @@
+body {
+  font-family: Verdana, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+main {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 20px;
+  top: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: relative; /* Added relative positioning */
+  padding-bottom: 40px; /* Adjust the padding bottom to accommodate the buttons */
+
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.preview-container {
+  text-align: center;
+  position: relative;
+}
+.preview-square {
+  background-image: url('/public/assets/images/placeholder.png');
+  background-size: cover; 
+  width: 440px;
+  height: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  white-space: pre-line;
+}
+.handle-preview {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+#square {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+.char-count {
+  font-size: 12px; 
+  margin-top: -5px;
+}
+
+.years-error {
+  color: red; 
+  display: none;
+}
+
+#connect-wallet-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#connected-address {
+  display: none;
+}
+
+#confirmation-modal {
+  display: none;
+}
+.cost-estimate {
+  font-weight: bold;
+  color: green;
+  margin-top: 20px;
+  text-align: center;
+}
+.form-container {
+  margin-top: 20px;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="number"] {
+  width: 98%;
+  padding: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+}
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#toggle-my-handles {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the right position as needed */
+  z-index: 1001; /* Ensure it's above other content */
+  /* Add any other styling you need for the button */
+}
+
+.my-handles {
+  position: fixed;
+  top: 0;
+  right: -600px; /* Adjust the initial position as needed */
+  width: 600px; /* Adjust the width as needed */
+  height: 100%;
+  background: #fff; /* Set your preferred background color */
+  transition: right 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other content */
+  overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a box shadow */
+}
+
+#my-handles-list {
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+
+#connected-address {
+  display: none;
+  position: fixed;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #ffffff;
+  background-color: #007BFF;
+  padding: 5px;
+  text-align: center;
+}
+
+.handle-text {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-weight: bold;
+}
+
+/* Style the toggle button */
+  .toggle-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+.toggle-button label {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #000000;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+/* Style for the selected label */
+.toggle-button label.active {
+  background-color: #0056b3;
+}
+
+/* Add this CSS to your existing styles */
+#my-handles-list li {
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+
+  /* Define the hover effect (e.g., background color change) */
+  &:hover {
+      background-color: #f2a900; /* Change the background color when hovering */
+      color: white; /* Change text color to white */
+  }
+}
+
+.toggle-button {
+  display: flex;
+  justify-content: space-between; /* Align the elements to the start and end */
+  width: 180px; /* Adjust the width as needed */
+  margin-right: 20px; /* Add spacing to the right if necessary */
+}
+
+/* Adjust the following CSS as needed */
+.input-button-container {
+  display: flex;
+  align-items: center;
+}
+/*registation years label*/
+.input-button-container label {
+  margin-right: 10px; 
+}
+/* years input */
+.input-button-container input {
+  font-size: 30px;
+  flex: 2;
+  margin-top: 3px;
+  padding: 5px;
+  width: 10px;
+  text-align: center;
+}
+/*register button*/
+#manage-handle-button {
+  padding: 5px;
+  margin-left: 10px; /* Add margin to separate the button from the input */
+  width: 80px;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 455px;
+  right: 720px;
+  background-color: #fff; /* Background color for the container */
+  padding: 5px; /* Adjust padding as needed */
+  border-radius: 5px; /* Add rounded corners */
+  z-index: 9999; /* Ensure it's on top of other elements */
+
+}
+
+.toggle-button label {
+  margin: 0 1px; /* Adjust the spacing between labels */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style for the selected radio button label */
+.toggle-button input:checked + label {
+  font-weight: bold;
+  color: #000000; /* Change color for the selected label */
+}
+
+#subhandle-mint-button {
+  position: fixed;
+  bottom: 130px; 
+  right: 1010px; 
+  z-index: 9999;
+}
+
+#inscribe-button {
+  position: fixed;
+  bottom: -320px; /* Adjust the top position as needed */
+  right: 500px; /* Adjust the right position as needed */
+  z-index: 9999; /* Ensure it's on top of other elements */
+}
+
+/* zkERC-6551 button */
+#activate-button {
+  position: fixed;
+  font-size: 12px;
+  width: 100px;
+  height: 40px;
+  bottom: 130px;
+  right: 893px;
+  z-index: 9999; /* Adjust the z-index as needed */
+}
+
+/* Adjust the height and font size for the input field */
+#handle-input {
+  height: 40px; /* You can change this value to adjust the height */
+  padding: 10; /* Remove padding to make the text centered */
+  font-size: 30px; /* Change this value to adjust the text size */
+}
+
+#clock {
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+.my-handles.show {
+  right: 0;
+}
+
+
+/* ======================================================================================== */
+/* Center the confirmation modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Set a high z-index to overlap other elements */
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000; /* Set a higher z-index to overlap the modal background */
+}
